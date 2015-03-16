@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<title>Calendario</title> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
+<link rel="stylesheet" href="css/responsiveslides.css">
+<link rel="stylesheet" href="css/jw-jqm-cal.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript" src="js/jw-jqm-cal.js"></script>
+<script src="js/responsiveslides.min.js"></script>
+<script type="text/javascript">
+$("#view-calendar").live('pageinit', function(event, ui) {
+   $("#calendar").jqmCalendar({
+      events : [ { "summary" : "Test event", "begin" : new Date("2013-02-05 00:00:00"), "end" : new Date("2013-02-07 00:00:00") }, { "summary" : "Charla Informativa Alcaldia", "begin" : new Date(), "end" : new Date() }, { "summary" : "Palabras del Presidente Obama", "begin" : new Date(), "end" : new Date() } ],
+      months : ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+      days : ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+      startOfWeek : 0
+   });
+})
+</script>
+
+</head> 
+<body> 
+
+	<div data-role="page" id="view-calendar">
+
+		<div data-role="header">
+			<h1 data-theme="b">Calendario</h1>
+			<a href="index.html" data-role="button" data-icon="home"
+				data-iconpos="notext" data-theme="b" data-iconpos="left"
+				data-inline="true">Inicio</a></a>
+		</div>
+
+		<div data-role="content">
+			<div id="calendar"></div>
+		</div>
+		<div data-role="footer" align="center">Alcaldia Mayor de Cartagena de Indias</div>
+	   
+
+	</div>
+</body>
+</html>

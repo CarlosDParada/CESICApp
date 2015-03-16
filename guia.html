@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Guia</title>
+
+<!--Llamadas a las librerias JS de jQuery, jQuery Mobile y a su hoja de estilos CSS -->
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.mobile-1.4.0-rc.1.js"></script>
+
+
+<link rel="stylesheet" href="css/responsiveslides.css">
+
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="js/responsiveslides.min.js"></script>
+
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+
+      // Slideshow 1
+
+      $("#slider1").responsiveSlides({
+        maxwidth: 800,
+        speed: 800
+
+    });
+    };
+  </script>
+
+
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&v=3.exp"></script>
+<script src="js/jquery.gmap.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+
+	//MAPA POLICIA
+	$("#responsive_map1").gMap({
+		 maptype: google.maps.MapTypeId.ROADMAP, 
+		 zoom: 15, 
+		 markers: 
+		 	[
+		 		{
+					 latitude: 10.445400555737521, 
+					 longitude: -75.52138357781831, 
+					 html: "<h2>Estación de Policía</h2>", 
+					 popup: false, 
+					 flat: true, 
+					 icon: { 
+						 image: "icons/customs.png", 
+						 iconsize: [32, 37], 
+						 iconanchor: [15, 30], 
+						 shadow: "icons/icon-shadow.png", 
+						 shadowsize: [32, 37], 
+						 shadowanchor: null}
+				},
+				{					
+					 latitude: 10.442783887030707, 
+					 longitude: -75.51404505395357, 
+					 html: "<h2>Policía Nacional Gaula</h2>", 
+					 popup: false, 
+					 flat: true, 
+					 icon: { 
+						 image: "icons/customs.png", 
+						 iconsize: [32, 37], 
+						 iconanchor: [15, 30], 
+						 shadow: "icons/icon-shadow.png", 
+						 shadowsize: [32, 37], 
+						 shadowanchor: null}
+				}
+			], 
+		 panControl: false, 
+		 zoomControl: true, 
+		 mapTypeControl: true, 
+		 scaleControl: true, 
+		 streetViewControl: false, 
+		 scrollwheel: true, 
+		 styles: [ { "stylers": [ { "hue": "#2b39b4" }, { "gamma": 1.58 } ] } ], 
+		 onComplete: function() {
+			 // Resize and re-center the map on window resize event
+			 var gmap = $("#responsive_map1").data('gmap').gmap;
+			 window.onresize = function(){
+				 google.maps.event.trigger(gmap, 'resize');
+				 $("#responsive_map1").gMap('fixAfterResize');
+			 };
+		}
+	});
+
+	//MAPA FISCALIA
+	$("#responsive_map2").gMap({
+		 maptype: google.maps.MapTypeId.ROADMAP, 
+		 zoom: 17, 
+		 markers: [{
+			 latitude: 10.425484831793996, 
+			 longitude: -75.5475673022217, 
+			 html: "<h2>Fiscalia</h2>", 
+			 popup: true, 
+			 flat: true, 
+			 icon: { 
+				 image: "icons/communitycentre.png", 
+				 iconsize: [32, 37], 
+				 iconanchor: [15, 30], 
+				 shadow: "icons/icon-shadow.png", 
+				 shadowsize: [32, 37], 
+				 shadowanchor: null}
+				} 
+			], 
+		 panControl: false, 
+		 zoomControl: true, 
+		 mapTypeControl: false, 
+		 scaleControl: false, 
+		 streetViewControl: true, 
+		 scrollwheel: false, 
+		 styles: [ { "stylers": [ { "hue": "#2b31b4" }, { "gamma": 1.58 } ] } ], 
+		 onComplete: function() {
+			 // Resize and re-center the map on window resize event
+			 var gmap = $("#responsive_map2").data('gmap').gmap;
+			 window.onresize = function(){
+				 google.maps.event.trigger(gmap, 'resize');
+				 $("#responsive_map2").gMap('fixAfterResize');
+			 };
+		}
+	});
+
+	//MAPA COMISARIA DE FAMILIA
+
+	$("#responsive_map3").gMap({
+		 maptype: google.maps.MapTypeId.ROADMAP, 
+		 zoom: 17, 
+		 markers: [{
+			 latitude: 10.406301224210091, 
+			 longitude: -75.49188464307252, 
+			 html: "<h2>Comisaria de Familia</h2>", 
+			 popup: true, 
+			 flat: true, 
+			 icon: { 
+				 image: "icons/communitycentre.png", 
+				 iconsize: [32, 37], 
+				 iconanchor: [15, 30], 
+				 shadow: "icons/icon-shadow.png", 
+				 shadowsize: [32, 37], 
+				 shadowanchor: null}
+				}
+			], 
+		 panControl: false, 
+		 zoomControl: true, 
+		 mapTypeControl: false, 
+		 scaleControl: false, 
+		 streetViewControl: true, 
+		 scrollwheel: false, 
+		 styles: [ { "stylers": [ { "hue": "#2b31b4" }, { "gamma": 1.58 } ] } ], 
+		 onComplete: function() {
+			 // Resize and re-center the map on window resize event
+			 var gmap = $("#responsive_map3").data('gmap').gmap;
+			 window.onresize = function(){
+				 google.maps.event.trigger(gmap, 'resize');
+				 $("#responsive_map3").gMap('fixAfterResize');
+			 };
+		}
+	});
+
+	//CENTROS DE SALUD
+	$("#responsive_map4").gMap({
+		 maptype: google.maps.MapTypeId.ROADMAP, 
+		 zoom: 14, 
+		 markers: [{
+			 latitude: 10.440320188903337, 
+			 longitude: -75.51952212476198, 
+			 html: "<h3>Puesto de Salud<br>Daniel Lemaitre</h3>", 
+			 popup: true, 
+			 flat: true, 
+			 icon: { 
+				 image: "icons/firstaid.png", 
+				 iconsize: [32, 37], 
+				 iconanchor: [15, 30], 
+				 shadow: "icons/icon-shadow.png", 
+				 shadowsize: [32, 37], 
+				 shadowanchor: null}
+				},
+				{					
+					 latitude: 10.424366348042081, 
+					 longitude: -75.54587214612428, 
+					 html: "<h3>Servicio de<br>Salud de Bolivar</h3>", 
+					 popup: false, 
+					 flat: true, 
+					 icon: { 
+						 image: "icons/firstaid.png", 
+						 iconsize: [32, 37], 
+						 iconanchor: [15, 30], 
+						 shadow: "icons/icon-shadow.png", 
+						 shadowsize: [32, 37], 
+						 shadowanchor: null}
+				},
+				{					
+					 latitude: 10.421580672936098, 
+					 longitude: -75.54063647412721, 
+					 html: "<h3>Salud Total<br>Pie Del Cerro</h3>", 
+					 popup: false, 
+					 flat: true, 
+					 icon: { 
+						 image: "icons/firstaid.png", 
+						 iconsize: [32, 37], 
+						 iconanchor: [15, 30], 
+						 shadow: "icons/icon-shadow.png", 
+						 shadowsize: [32, 37], 
+						 shadowanchor: null}
+				}
+			], 
+		 panControl: false, 
+		 zoomControl: true, 
+		 mapTypeControl: false, 
+		 scaleControl: false, 
+		 streetViewControl: true, 
+		 scrollwheel: false, 
+		 styles: [ { "stylers": [ { "hue": "#2b31b4" }, { "gamma": 1.58 } ] } ], 
+		 onComplete: function() {
+			 // Resize and re-center the map on window resize event
+			 var gmap = $("#responsive_map4").data('gmap').gmap;
+			 window.onresize = function(){
+				 google.maps.event.trigger(gmap, 'resize');
+				 $("#responsive_map4").gMap('fixAfterResize');
+			 };
+		}
+	});
+
+	$("#responsive_map5").gMap({
+		 maptype: google.maps.MapTypeId.ROADMAP, 
+		 zoom: 14, 
+		 markers: [{
+			 latitude: 10.43128822071391, 
+			 longitude: -75.53428500317995, 
+			 html: "<h3>Bienestar Familiar<br>Sede Torice</h3>", 
+			 popup: true, 
+			 flat: true, 
+			 icon: { 
+				 image: "icons/family.png", 
+				 iconsize: [32, 37], 
+				 iconanchor: [15, 30], 
+				 shadow: "icons/icon-shadow.png", 
+				 shadowsize: [32, 37], 
+				 shadowanchor: null}
+				},
+				{					
+					 latitude: 10.449773930662376, 
+					 longitude: -75.51729052686159, 
+					 html: "<h3>Hogares CREA</h3>", 
+					 popup: false, 
+					 flat: true, 
+					 icon: { 
+						 image: "icons/family.png", 
+						 iconsize: [32, 37], 
+						 iconanchor: [15, 30], 
+						 shadow: "icons/icon-shadow.png", 
+						 shadowsize: [32, 37], 
+						 shadowanchor: null}
+				}
+			], 
+		 panControl: false, 
+		 zoomControl: true, 
+		 mapTypeControl: false, 
+		 scaleControl: false, 
+		 streetViewControl: true, 
+		 scrollwheel: false, 
+		 styles: [ { "stylers": [ { "hue": "#2b31b4" }, { "gamma": 1.58 } ] } ], 
+		 onComplete: function() {
+			 // Resize and re-center the map on window resize event
+			 var gmap = $("#responsive_map5").data('gmap').gmap;
+			 window.onresize = function(){
+				 google.maps.event.trigger(gmap, 'resize');
+				 $("#responsive_map5").gMap('fixAfterResize');
+			 };
+		}
+	});
+	$("#responsive_map6").gMap({
+		 maptype: google.maps.MapTypeId.ROADMAP, 
+		 zoom: 14, 
+		 markers: [{
+			 latitude: 10.40132046865078, 
+			 longitude: -75.50501673840944, 
+			 html: "Instituto Nacional de<br>Medicina Legal", 
+			 popup: true, 
+			 flat: true, 
+			 icon: { 
+				 image: "icons/accident.png", 
+				 iconsize: [32, 37], 
+				 iconanchor: [15, 30], 
+				 shadow: "icons/icon-shadow.png", 
+				 shadowsize: [32, 37], 
+				 shadowanchor: null}
+				} 
+			], 
+		 panControl: false, 
+		 zoomControl: true, 
+		 mapTypeControl: false, 
+		 scaleControl: false, 
+		 streetViewControl: true, 
+		 scrollwheel: false, 
+		 styles: [ { "stylers": [ { "hue": "#2b31b4" }, { "gamma": 1.58 } ] } ], 
+		 onComplete: function() {
+			 // Resize and re-center the map on window resize event
+			 var gmap = $("#responsive_map6").data('gmap').gmap;
+			 window.onresize = function(){
+				 google.maps.event.trigger(gmap, 'resize');
+				 $("#responsive_map6").gMap('fixAfterResize');
+			 };
+		}
+	});
+});
+</script>
+
+<style type="text/css">
+#responsive_map1, #responsive_map2, #responsive_map3, #responsive_map4, #responsive_map5, #responsive_map6 {height: 420px; width: 100%;}
+#responsive_map1, #responsive_map2, #responsive_map3, #responsive_map4, #responsive_map5, #responsive_map6 div {-webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;}
+.gm-style-iw {max-width: none !important; min-width: none !important; max-height: none !important; min-height: none !important; overflow-y: hidden !important; overflow-x: hidden !important; line-height: normal !important; padding: 5px !important; }
+</style>
+</head>
+
+
+<body>
+
+<div data-role="page" id="inicioGuia">
+		<div data-role="header">
+			<h1 data-theme="b">Guia</h1>
+			<a href="index.html" data-role="button" data-icon="home"
+				data-iconpos="notext" data-theme="b" data-iconpos="left"
+				data-inline="true">Inicio</a></a>
+		</div>
+		
+		<div>
+			<img src="images/logo.jpg" />
+		</div>
+		<div data-role="content">
+
+		<div>
+                        <div data-role="collapsible" data-theme="b" data-collapsed-icon="arrow-r"  data-expanded-icon="arrow-d">
+	                        <h3>Fiscalia </h3>
+
+							<div id="responsive_map2"></div>
+
+
+	                        <iframe scrolling="no" frameborder="0" allowtransparency="true" style="border: medium none ; overflow: hidden; width: 450px; height: 35px;" src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/CartagenaMiA&amp;layout=standard&amp;show_faces=false&amp;width=350&amp;action=like&amp;colorscheme=light&amp;height=35"></iframe>
+
+							<a href="https://plus.google.com/share?url={https://www.facebook.com/CartagenaMiA}" onclick="javascript:window.open(this.href,
+                            '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"><img
+                            src="https://www.gstatic.com/images/icons/gplus-32.png" alt="Share on Google+"/></a>
+	                         <a href="whatsapp://send?text=La fiscalia más cercana es en la calle 27"><img alt="Compartir en WhatsApp" src="http://m.cuantocabron.com/images_common/whatsapp.png"></a>
+                         
+                        </div>
+                        
+                        <div data-role="collapsible" data-theme="b" data-collapsed-icon="arrow-r"  data-expanded-icon="arrow-d">
+                        	<h3>Policia Nacional </h3>
+
+
+							<div id="responsive_map1"></div>
+
+
+	                        <iframe scrolling="no" frameborder="0" allowtransparency="true" style="border: medium none ; overflow: hidden; width: 450px; height: 35px;" src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/CartagenaMiA&amp;layout=standard&amp;show_faces=false&amp;width=350&amp;action=like&amp;colorscheme=light&amp;height=35"></iframe>
+
+							<a href="https://plus.google.com/share?url={https://www.facebook.com/CartagenaMiA}" onclick="javascript:window.open(this.href,
+                            '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"><img
+                            src="https://www.gstatic.com/images/icons/gplus-32.png" alt="Share on Google+"/></a>
+	                         <a href="whatsapp://send?text=La estación de policía más cercana es en la calle 72"><img alt="Compartir en WhatsApp" src="http://m.cuantocabron.com/images_common/whatsapp.png"></a>
+
+                        </div>
+                        
+                        <div data-role="collapsible" data-theme="b" data-collapsed-icon="arrow-r"  data-expanded-icon="arrow-d">
+                        	<h3>Comisaria de Familia </h3>
+
+
+							<div id="responsive_map3"></div>
+
+
+	                        <iframe scrolling="no" frameborder="0" allowtransparency="true" style="border: medium none ; overflow: hidden; width: 450px; height: 35px;" src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/CartagenaMiA&amp;layout=standard&amp;show_faces=false&amp;width=350&amp;action=like&amp;colorscheme=light&amp;height=35"></iframe>
+
+							<a href="https://plus.google.com/share?url={https://www.facebook.com/CartagenaMiA}" onclick="javascript:window.open(this.href,
+                            '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"><img
+                            src="https://www.gstatic.com/images/icons/gplus-32.png" alt="Share on Google+"/></a>
+	                         <a href="whatsapp://send?text=La fiscalia más cercana es en la calle 27"><img alt="Compartir en WhatsApp" src="http://m.cuantocabron.com/images_common/whatsapp.png"></a>
+                        </div>
+                        
+                        <div data-role="collapsible" data-theme="b" data-collapsed-icon="arrow-r"  data-expanded-icon="arrow-d">
+                        	<h3>Instituciones de Salud </h3>
+
+
+							<div id="responsive_map4"></div>
+
+
+	                        <iframe scrolling="no" frameborder="0" allowtransparency="true" style="border: medium none ; overflow: hidden; width: 450px; height: 35px;" src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/CartagenaMiA&amp;layout=standard&amp;show_faces=false&amp;width=350&amp;action=like&amp;colorscheme=light&amp;height=35"></iframe>
+
+							<a href="https://plus.google.com/share?url={https://www.facebook.com/CartagenaMiA}" onclick="javascript:window.open(this.href,
+                            '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"><img
+                            src="https://www.gstatic.com/images/icons/gplus-32.png" alt="Share on Google+"/></a>
+	                         <a href="whatsapp://send?text=La fiscalia más cercana es en la calle 27"><img alt="Compartir en WhatsApp" src="http://m.cuantocabron.com/images_common/whatsapp.png"></a>
+
+                        </div>
+                        
+                        <div data-role="collapsible" data-theme="b" data-collapsed-icon="arrow-r"  data-expanded-icon="arrow-d">
+                        	<h3>I.C.B.F </h3>
+
+
+							<div id="responsive_map5"></div>
+
+
+	                        <iframe scrolling="no" frameborder="0" allowtransparency="true" style="border: medium none ; overflow: hidden; width: 450px; height: 35px;" src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/CartagenaMiA&amp;layout=standard&amp;show_faces=false&amp;width=350&amp;action=like&amp;colorscheme=light&amp;height=35"></iframe>
+
+							<a href="https://plus.google.com/share?url={https://www.facebook.com/CartagenaMiA}" onclick="javascript:window.open(this.href,
+                            '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"><img
+                            src="https://www.gstatic.com/images/icons/gplus-32.png" alt="Share on Google+"/></a>
+	                         <a href="whatsapp://send?text=La fiscalia más cercana es en la calle 27"><img alt="Compartir en WhatsApp" src="http://m.cuantocabron.com/images_common/whatsapp.png"></a>
+                        </div>    
+                         
+                        <div data-role="collapsible" data-theme="b" data-collapsed-icon="arrow-r"  data-expanded-icon="arrow-d">
+                        	<h3>Medicina Legal </h3>
+
+
+							<div id="responsive_map6"></div>
+
+
+	                        <iframe scrolling="no" frameborder="0" allowtransparency="true" style="border: medium none ; overflow: hidden; width: 450px; height: 35px;" src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/CartagenaMiA&amp;layout=standard&amp;show_faces=false&amp;width=350&amp;action=like&amp;colorscheme=light&amp;height=35"></iframe>
+
+							<a href="https://plus.google.com/share?url={https://www.facebook.com/CartagenaMiA}" onclick="javascript:window.open(this.href,
+                            '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"><img
+                            src="https://www.gstatic.com/images/icons/gplus-32.png" alt="Share on Google+"/></a>
+	                         <a href="whatsapp://send?text=La fiscalia más cercana es en la calle 27"><img alt="Compartir en WhatsApp" src="http://m.cuantocabron.com/images_common/whatsapp.png"></a>
+                        </div>
+                            
+                            
+                    </ul>
+				</div>
+			<div data-role="footer" align="center">Calidad de Vida</div>
+		</div>
+		</div>
+</body>
+</html>

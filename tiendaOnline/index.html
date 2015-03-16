@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+    <title>CESICAPP</title>
+
+<!--Llamadas a las librerias JS de jQuery, jQuery Mobile y a su hoja de estilos CSS -->
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css"
+	href="css/jquery.mobile.flatui.css" />
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.mobile-1.4.0-rc.1.js"></script>
+
+
+<link rel="stylesheet" href="css/responsiveslides.css" />
+
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="js/responsiveslides.min.js"></script>
+
+<style>
+    #panel1,#panel2{
+        background-color:#e6e6e6;
+    }
+</style>
+</head>
+
+
+<body>
+
+
+
+<!-- PORTADA -->
+<div data-role="page" id="portada">
+
+    <!-- PANEL LATERAL -->
+    <div data-role="panel" id="panel1" data-position="left"
+	data-theme="a" data-display="push"
+        class="ui-panel ui-panel-position-left 
+        ui-panel-display-push ui-body-a ui-panel-animate ui-panel-open">
+    <div data-role="header">
+        <h1>Menu Lateral</h1>
+        <a href="#" data-role="button" data-icon="flat-checkround"
+       data-iconpos="notext" data-theme="a" data-inline="true"
+       class="ui-link ui-btn ui-btn-b ui-icon-flat-checkround ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all"
+       role="button">Checkround</a>
+    </div>
+<!-- //////////////////////////// -->
+    <div data-role="content">
+<!--Declaramos un filtro de búsqueda en la lista-->
+    <a href="sensibilidad.html" data-role="button" data-inline="false" data-theme="b">Sensibilizacion</a> <!-- /content --> 
+    <a href="guia.html" data-role="button" data-inline="false" data-theme="b">Guia</a>
+    <a href="calendario.html" data-role="button" data-inline="false" data-theme="b">Calendario</a>
+    <a href="denuncia.html" data-role="button" data-inline="false" data-theme="b">Denuncia </a>
+     </div>
+    <div data-roler="footer" align="center" data-theme="b">
+   <h3 > Conciencia Social</h3>
+    </div>
+   
+			<!-- /////////////////////		 -->
+    </div>
+<!-- /PANEL LATERAL -->
+<!-- PANEL LATERAL 2 -->
+    <div data-role="panel" id="panel2" data-position="right"
+	data-theme="a" data-display="push"
+        class="ui-panel ui-panel-position-right 		
+        ui-panel-display-push ui-body-a ui-panel-animate ui-panel-open">
+        <div data-role="header">
+            <h1>Usuario</h1>
+            <a href="#" data-role="button" data-icon="flat-checkround"
+           data-iconpos="notext" data-theme="a" data-inline="true"
+           class="ui-link ui-btn ui-btn-b ui-icon-flat-checkround ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all"
+           role="button">Checkround</a>
+        </div>
+        <!-- //////////////////////////// -->
+        <div>
+        <!--Declaramos un filtro de búsqueda en la lista-->
+	<ul data-role="listview" data-theme="b">
+        <div>
+        <div id="wrapper">
+	<div id="login" class="animate form">
+        <form action="mysuperscript.php" autocomplete="on">
+	<h1>Log in</h1>
+	<p>
+	<label for="username" class="uname" data-icon="u">
+            Email or username </label> <input id="username" name="username"
+                   required="required" type="text"
+                   placeholder="username or mymail@mail.com" />
+        </p>
+        <p>
+            <label for="password" class="youpasswd" data-icon="p">
+                Password </label> <input id="password" name="password"
+                       required="required" type="password"
+                       placeholder="eg. X8df!90EO" />
+        </p>
+        <p class="keeplogin">
+            <input type="checkbox" name="loginkeeping" id="loginkeeping"
+                   value="loginkeeping" /> <label for="loginkeeping">Recordar
+                contrasena</label>
+        </p>
+        <p class="login button">
+            <input type="submit" value="Login" />
+        </p>
+        <p class="change_link">
+            No es usuario ? <a href="signup.html">Registro</a>
+        </p>
+        </form>
+        </div>
+        </div>
+	</div>
+        <li data-role="list-divider">Acerca
+            <ul>
+                <li data-theme="c" type="disc"><font size="2">App
+                        Version Prototipo Funcional</font></li>
+                        <li data-theme="c" type="disc"><font size="2">#APPortaALaPaz</font></li>
+            </ul>
+        </li>
+        </ul>
+        </div>
+<!-- /////////////////////		 -->
+	</div>
+<!-- /PANEL LATERAL 2 -->
+        <div data-role="header">
+            <h1 data-theme="b">Reto</h1>		
+            <a data-iconpos="notext" href="#panel1"
+               data-role="button" data-icon="bars"></a>
+            <a data-iconpos="notext" href="#panel2"
+               data-role="button" data-icon="gear"></a>
+            <img src="images/logo.jpg" /> 
+	</div>
+        <div data-role="content"> 
+            <a href="trivia1.html" data-rel="dialog" data-transition="flip" data-role="button" data-inline="false"
+			data-theme="b">Trivia a Consciencia</a>
+            <a href="ruta.html" data-rel="dialog"  data-transition="flip" data-role="button" 
+			data-theme="b">Ruta de una Denuncia</a>
+            
+           <a href="atencion.html" data-rel="dialog"  data-transition="flip" data-role="button" 
+			data-theme="b">Ruta de Atencion </a>
+          
+            <ul class="rslides" id="slider">
+                <li><img src="images/principal1.png" alt="One" /></li>
+		<li><img src="images/2.png" alt="Two" /></li>
+		<li><img src="images/3.png" alt="Three" /></li>
+		<li><img src="images/4.png" alt="Four" /></li>
+            </ul>
+            <a href="#contactos" data-role="button" data-inline="false"
+			data-theme="b">Contactos</a>
+            <table align="center">
+		<tr>
+                    <td align="center"><a
+                        href="https://www.facebook.com/pages/Alcald%C3%ADa-Mayor-de-Cartagena-de-Indias-DT-Y-C/127290090666721" target="new"><img
+			width=60% src="images/facebook.png"></a></td>
+                <td align="center"><a
+			href="http://instagram.com/alcaldiacartagena" target="new"><img
+			width=50% src="images/twitter.png"></a</td>
+		<td align="center"><a
+			href="http://instagram.com/alcaldiacartagena"
+			target="new">
+                        <img width=90% src="images/insta.png"></a</td>
+		<td align="center"><a
+			href="https://www.youtube.com/channel/UCWaFWcQZHTys1f-MkqpcAAg"
+			target="new">
+                        <img width=55% src="images/youtube.png"></a</td>
+	
+		</tr>
+            </table> <div align="center"><img src="images/cartagena.png" width="80%" height="80%" /></div>
+            
+        </div>   
+	<div data-role="footer" align="center">
+            <h3>
+                Alcadia Mayor de Cartagena de Indias
+            </h3>
+        </div>
+	
+
+
+
+	<!-- /PORTADA -->
+
+	
+</body>
+
+
+</html>
